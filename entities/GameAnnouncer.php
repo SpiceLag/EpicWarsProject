@@ -20,6 +20,7 @@ class GameAnnouncer {
         echo $character->getName()." es un ".$character->getRace()::getRaceName()."</br>";
         echo "Las estadísticas de ".$character->getName()." son:</br>";
         echo "Su clase es: " .$character->getPlayableClass()."</br>";
+        echo "Su arma inicial: " .$character->getHands("2Ha")->getName()."</br>";
         echo "HP Max: ".$character->getMaxHealtPoints()."</br>";
         echo "Str: ".$character->getStr()."</br>";
         echo "Intl: ".$character->getIntl()."</br>";

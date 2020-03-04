@@ -4,7 +4,7 @@ require './config.php';
 // usamos namespaces para estructurar con más orden nuestras clases
 // el \ inicial nos ayuda a que la rita sea desde la raíz en lugar de tomar
 // la ruta dinámica desde el punto en donde estamos importando una clase
-$human = \entities\Managers\CharacterManager::create("Gerald",1,1,\entities\Races\Human::class,"Mage");
+$human = \entities\Managers\CharacterManager::create("Gerald",1,1,\entities\Races\Human::class,"Rogue");
 $orc = \entities\Managers\CharacterManager::create("Garrosh",1,1,\entities\Races\Orc::class,"Warrior");
 
 //presentCharacter($human);
@@ -25,6 +25,8 @@ $orc = \entities\Managers\CharacterManager::create("Garrosh",1,1,\entities\Races
 \entities\Managers\SkillManager::forgetSkill($human);
 \entities\Managers\SkillManager::learnSkill($human, $tajoMortal);
 
+$daga = new \entities\Weapon("Daga envenenada","1H","All"); 
+\entities\Managers\WeaponManager::equipWeapon($human,$daga);
 
 
 

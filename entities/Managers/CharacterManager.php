@@ -16,8 +16,13 @@ class CharacterManager{
         $level = 1;
         $isAlive = true;
         $actualSkill = null;
+        $hands = array( 
+            "LH" => null,
+            "RH" => null,
+            "2Ha" => new \entities\Weapon("Punhos", "1H","All")
+        );
         $character = new \entities\Character($name, $sex, $bodyType, $race, $playableClass, $str, $intl ,$agi ,$pDef ,
-                $mDef ,$xp, $healtPoints,$maxHealtPoints, $level, $isAlive, $actualSkill);
+                $mDef ,$xp, $healtPoints,$maxHealtPoints, $level, $isAlive, $actualSkill, $hands);
         
         \entities\GameAnnouncer::presentCharacter($character);
         return  $character;

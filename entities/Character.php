@@ -19,8 +19,9 @@ class Character {
     private $playableClass;
     private $isAlive;
     private $actualSkill;
+    private $hands = array(); 
 
-    public function __construct( $name, $sex, $bodyType, $race, $playableClass, $str, $intl ,$agi ,$pDef ,$mDef ,$xp, $healtPoints,$maxHealtPoints, $level, $isAlive, $actualSkill)
+    public function __construct( $name, $sex, $bodyType, $race, $playableClass, $str, $intl ,$agi ,$pDef ,$mDef ,$xp, $healtPoints,$maxHealtPoints, $level, $isAlive, $actualSkill,$hands = array())
     {
         $this->name = $name;
         $this->sex = $sex;
@@ -38,6 +39,7 @@ class Character {
         $this->playableClass = $playableClass;
         $this->isAlive = $isAlive;
         $this->actualSkill = $actualSkill;
+        $this->hands = $hands;
     }
     
     /**
@@ -356,6 +358,26 @@ class Character {
     public function setActualSkill($actualSkill)
     {
         $this->actualSkill = $actualSkill;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of hands
+     */ 
+    public function getHands($var)
+    {
+        return $this->hands[$var];
+    }
+
+    /**
+     * Set the value of hands
+     *
+     * @return  self
+     */ 
+    public function setHands($element, $var)
+    {
+        $this->hands[$element] = $var;
 
         return $this;
     }

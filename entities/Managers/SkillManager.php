@@ -4,26 +4,19 @@ namespace entities\Managers;
 
 class SkillManager {
 
-    //public $golpeConArma = new \entities\Skills\Skill("Golpe_con_Arma", "Fisico", "Basico", "100% de danho con arma derecha o 2 manos. 70% mano izquierda");
-    //public $golpeTrampero = new \entities\Skills\Skill("Golpe Trampero", "Fisico", "Picaro", "150% de danho con armas en ambas manos de una mano.");
-    //public $tajoMortal = new \entities\Skills\Skill("Tajo Mortal","Fisico","Guerrero","200% de danho con armas.");
-    //public $meditacion = new \entities\Skills\Skill("Meditacion","Magico","Basico","Incrementa su agi y intl en 5%.");
-    //public $calcinacion = new \entities\Skills\Skill("Calcinacion","Magico","Mago","40% de danho magico usando intl.");
-    //public $tacticasCombate = new \entities\Skills\Skill("Tacticas de Combate","Fisico","Avanzado","Incrementa str y agi en 5%.");
-
     public static function learnSkill (\entities\Character $character, \entities\Skills\Skill $skill) {
         if($character->getActualSkill() == null){
             switch($character->getPlayableClass()){
                 case "Warrior":
                     if($skill->getType() == "Magico"){
-                        echo "Los guerreros no aprenden magia!";
+                        echo "Los guerreros no aprenden magia!</br>";
                     break;
                     }
                     elseif($skill->getSubType() == "Picaro") {
-                        echo "Los guerreros no aprenden habilidades de picaro!";
+                        echo "Los guerreros no aprenden habilidades de picaro!</br>";
                     break;
                     }elseif($skill->getSubType() == "Mago") {
-                        echo "Los guerreros no aprenden habilidades de mago!";
+                        echo "Los guerreros no aprenden habilidades de mago!</br>";
                     break;
                     }
                     else{
@@ -34,13 +27,13 @@ class SkillManager {
                 break;
                 case "Mage":
                     if($skill->getType() == "Fisico" && $skill->getSubType() == "Avanzado"){
-                        echo "Los magos no aprenden habilidades fisicas avanzadas!";
+                        echo "Los magos no aprenden habilidades fisicas avanzadas!</br>";
                     break;
                     }elseif($skill->getSubType() == "Guerrero"){
-                        echo "Los magos no aprenden habilidades de guerrero!";
+                        echo "Los magos no aprenden habilidades de guerrero!</br>";
                     break;
                     }elseif($skill->getSubType() == "Picaro"){
-                        echo "Los magos no aprenden habilidades de picaro!";
+                        echo "Los magos no aprenden habilidades de picaro!</br>";
                     break;
                     }else{
                         \entities\GameAnnouncer::learnSkill($character, $skill);
@@ -50,17 +43,17 @@ class SkillManager {
                 break;
                 case "Rogue":
                     if($skill->getType() == "Fisico" && $skill->getSubType() == "Avanzado"){
-                        echo "Los picaros no aprenden habilidades fisicas avanzadas!";
+                        echo "Los picaros no aprenden habilidades fisicas avanzadas!</br>";
                     break;
                     }
                     if($skill->getType() == "Magico" && $skill->getSubType() == "Avanzado"){
-                        echo "Los picaros no aprenden habilidades magicas avanzadas!";
+                        echo "Los picaros no aprenden habilidades magicas avanzadas!</br>";
                     break;
                     }elseif($skill->getSubType() == "Guerrero"){
-                        echo "Los picaros no aprenden habilidades de guerrero!";
+                        echo "Los picaros no aprenden habilidades de guerrero!</br>";
                     break;
                     }elseif($skill->getSubType() == "Mago"){
-                        echo "Los picaros no aprenden habilidades de mago!";
+                        echo "Los picaros no aprenden habilidades de mago!</br>";
                     break;
                     }else{
                         \entities\GameAnnouncer::learnSkill($character, $skill);
@@ -70,7 +63,7 @@ class SkillManager {
                 break;
             }
         }else{
-            echo "Olvidar primero la skill actual";
+            echo "Olvidar primero la skill actual</br>";
         }
     }
     public static function forgetSkill (\entities\Character $character) {
