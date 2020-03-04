@@ -1,0 +1,36 @@
+Character => Class
+    attr
+        String name
+        Boolean sex
+        Int bodyType
+        Float healtPoints
+        Float maxHealtPoints
+        Int level
+        Int str (strenght)
+        Int intl (intelect)
+        Int agi (agility)
+        Int pDef (physical defense)
+        Int mDef (magic defense)
+        Double xp (experience points)
+        Race
+        Class
+
+Skill
+    attr
+        name
+        description
+        type
+
+Type
+    attr
+        name
+        description
+        subtype
+
+SubType
+    attr
+        name
+        description
+
+Weapon => Class
+
